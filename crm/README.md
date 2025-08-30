@@ -1,29 +1,32 @@
 # CRM Celery Setup
 
 ## Setup Instructions
-1. Install Redis:
+
+1. **Install Redis**
    ```bash
    sudo apt-get install redis-server
-Install dependencies:
+Install dependencies
 
+bash
+Copy code
 pip install -r requirements.txt
+Run migrations
 
-
-Run migrations:
-
+bash
+Copy code
 python manage.py migrate
+Start Celery worker
 
-
-Start Celery worker:
-
+bash
+Copy code
 celery -A crm worker -l info
+Start Celery Beat
 
-
-Start Celery Beat:
-
+bash
+Copy code
 celery -A crm beat -l info
+Verify logs
 
-
-Check logs:
-
+bash
+Copy code
 cat /tmp/crm_report_log.txt
